@@ -1,0 +1,36 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Button } from './Button';
+
+<Meta title='UI-kit/buttons/Button' component={Button} />
+
+export const ButtonTemplate = (props) => <Button {...props} />;
+
+export const buttonProps = {
+  children: 'Button'
+};
+
+# Button
+
+<Canvas withToolbar>
+  <Story name='Playground' args={buttonProps}>
+    {ButtonTemplate.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable story='Playground' />
+
+## Variants
+
+### Contained
+
+<Canvas>
+  <Story
+    name='Contained'
+    args={{
+      ...buttonProps,
+      variant: 'contained'
+    }}
+  >
+    {ButtonTemplate.bind({})}
+  </Story>
+</Canvas>

@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "strapi": "strapi",
-    "dev": "strapi develop",
+    "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build"
+    "build": "strapi build",
+    "strapi": "strapi"
   },
   "devDependencies": {},
   "dependencies": {
@@ -16,7 +16,15 @@
     "@strapi/plugin-i18n": "4.7.1",
     "better-sqlite3": "8.0.1"
   },
+  "author": {
+    "name": "A Strapi developer"
+  },
   "strapi": {
-    "uuid": "aad65946-f8ff-4216-ae1b-ae2c0ff31a97"
-  }
+    "uuid": "79bb4487-b200-4939-8d48-f4e19298536a"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }

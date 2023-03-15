@@ -20,7 +20,7 @@ export const classnames = (...args: ClassValue[]) => {
       // eslint-disable-next-line @typescript-eslint/no-loop-func
       Object.keys(obj).forEach((cn) => {
         if (obj[cn]) {
-          classNames += `${cn}`;
+          classNames += ` ${cn}`;
         }
       });
     }

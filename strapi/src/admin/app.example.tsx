@@ -1,7 +1,4 @@
 export default {
-  bootstrap(app: any) {
-    console.log(app);
-  },
   config: {
     locales: [
       // 'ar',
@@ -31,5 +28,8 @@ export default {
       // 'zh-Hans',
       // 'zh',
     ]
+  },
+  bootstrap(app) {
+    console.log(app);
   }
 };

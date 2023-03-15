@@ -27,7 +27,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'simple-import-sort'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'react/function-component-definition': [
       2,
@@ -64,24 +64,20 @@ module.exports = {
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
-    'simple-import-sort/exports': 1,
-    'simple-import-sort/imports': [
-      1,
+    'import/order': [
+      2,
       {
-        groups: [
-          // External packages.
-          ['^'],
-          // Internal packages.
-          ['^@/'],
-          // Side effect imports.
-          ['^\\u0000'],
-          // Parent imports.
-          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-          // Other relative imports.
-          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-          // Style imports.
-          ['^.+\\.s?css$']
-        ]
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+        pathGroups: [
+          {
+            pattern: '@/**',
+            group: 'internal'
+          }
+        ],
+        alphabetize: {
+          order: 'asc'
+        }
       }
     ]
   }

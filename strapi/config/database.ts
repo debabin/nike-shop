@@ -1,6 +1,6 @@
 import path from 'path';
 
-export default ({ env }: any) => {
+export default ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
 
   const connections = {
@@ -54,7 +54,6 @@ export default ({ env }: any) => {
   return {
     connection: {
       client,
-      // @ts-ignore
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000)
     }

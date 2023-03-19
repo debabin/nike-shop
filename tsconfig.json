@@ -19,7 +19,9 @@
       "@/*": ["./*"],
       "@/utils/helpers": ["./src/utils/helpers"],
       "@/utils/constants": ["./src/utils/constants"],
-      "@/utils/api": ["./src/utils/api"]
+      "@/utils/api": ["./src/utils/api"],
+      "@/ui": ["./src/components"],
+      "@/ui/icons": ["./src/components/icons"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

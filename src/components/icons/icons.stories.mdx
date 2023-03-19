@@ -1,0 +1,15 @@
+import { Meta, Title, IconGallery, IconItem } from '@storybook/addon-docs/';
+
+import { ICON_OPTIONS } from './storybook';
+
+<Meta title='ui/iconography' />
+
+# Iconography
+
+<IconGallery>
+  {Object.entries(ICON_OPTIONS).map(([iconName, iconComponent]) => (
+    <IconItem name={iconName} key={iconName}>
+      {iconComponent}
+    </IconItem>
+  ))}
+</IconGallery>

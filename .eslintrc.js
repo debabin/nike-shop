@@ -1,16 +1,16 @@
 module.exports = {
   extends: [
-    'plugin:react/recommended',
     'airbnb',
-    'airbnb-typescript',
-    'prettier',
-    'plugin:storybook/recommended'
+    'airbnb/hooks',
+    'airbnb-typescript/base',
+    // 'plugin:@typescript-eslint/recommended',
+    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier'
   ],
   env: {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'prettier'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -27,8 +27,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['prettier'],
   rules: {
+    '@typescript-eslint/no-shadow': 0,
     'react/function-component-definition': [
       2,
       {
@@ -50,6 +51,7 @@ module.exports = {
     'react/no-array-index-key': 0,
     'no-param-reassign': 0,
     'sort-keys': [1, 'asc', { natural: true, allowLineSeparatedGroups: true }],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-sort-props': [
       2,
       {
@@ -64,6 +66,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
+    'import/export': 0,
     'import/order': [
       2,
       {

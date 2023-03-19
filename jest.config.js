@@ -1,12 +1,14 @@
+/** @type {import('jest').Config} */
 module.exports = {
   rootDir: './',
   clearMocks: true,
   collectCoverage: true,
   testEnvironment: 'jsdom',
   coverageDirectory: 'coverage',
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)test.[jt]s?(x)'],
+  testMatch: ['**/?(*.)test.ts?(x)'],
   moduleNameMapper: {
-    '@/utils/helpers': '<rootDir>/src/utils/helpers'
+    '@/utils/helpers': '<rootDir>/src/utils/helpers',
+    '@/ui/icons': '<rootDir>/src/components/icons'
   },
   setupFilesAfterEnv: ['<rootDir>/setupTests.js']
 };

@@ -2,7 +2,7 @@ import * as path from 'path';
 import { StorybookConfig } from '@storybook/core-common';
 
 const config: StorybookConfig = {
-  stories: ['../**/*.stories.@(ts|tsx)'],
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -23,7 +23,8 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@/utils/helpers': path.resolve(__dirname, '../src/utils/helpers')
+        '@/utils/helpers': path.resolve(__dirname, '../src/utils/helpers'),
+        '@/ui/icons': path.resolve(__dirname, '../src/components/icons')
       };
     }
 

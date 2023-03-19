@@ -23,5 +23,5 @@ Outlined.args = { ...buttonProps, variant: 'outlined' };
 
 export default {
   component: Button,
-  title: 'ui/button'
+  title: 'ui/buttons/button'
 } as ComponentMeta<typeof Button>;

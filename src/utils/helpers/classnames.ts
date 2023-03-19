@@ -5,7 +5,7 @@ interface ClassDictionary {
 type ClassValue = string | ClassDictionary;
 
 export const classnames = (...args: ClassValue[]) => {
-  let classNames: string = '';
+  let classNames = '';
 
   for (let i = 0; i < args.length; i += 1) {
     const className = args[i];

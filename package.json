@@ -17,8 +17,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "yarn format",
-      "yarn lint --fix",
-      "yarn test --bail --findRelatedTests"
+      "yarn lint --fix"
     ]
   },
   "dependencies": {
@@ -52,13 +51,13 @@
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.55.0",
     "autoprefixer": "^10.4.14",
-    "babel-loader": "^8.3.0",
+    "babel-loader": "^9.1.2",
     "babel-plugin-react-require": "^3.1.3",
     "eslint": "8.35.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",

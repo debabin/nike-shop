@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
+import { LikeIcon } from '@/ui/icons';
+
 import type { ButtonProps } from './Button';
 import { Button, BUTTON_TEST_IDS } from './Button';
 
@@ -10,7 +12,7 @@ const buttonProps = {
 
 describe('Button startIcon', () => {
   test('should display startIcon when provided', () => {
-    render(<Button {...buttonProps} startIcon={<div>1</div>} />);
+    render(<Button {...buttonProps} startIcon={<LikeIcon />} />);
 
     const startIcon = screen.getByTestId(BUTTON_TEST_IDS.START_ICON);
 
@@ -28,7 +30,7 @@ describe('Button startIcon', () => {
 
 describe('Button endIcon', () => {
   test('should display endIcon when provided', () => {
-    render(<Button {...buttonProps} endIcon={<div>1</div>} />);
+    render(<Button {...buttonProps} endIcon={<LikeIcon />} />);
 
     const endIcon = screen.getByTestId(BUTTON_TEST_IDS.END_ICON);
 

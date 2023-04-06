@@ -1,6 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import * as Icons from '@/ui/icons';
+
+import { ICON_OPTIONS } from '../../icons/storybook';
 
 import type { IconButtonProps } from './IconButton';
 import { IconButton } from './IconButton';
@@ -22,7 +24,7 @@ export default {
       control: {
         type: 'select'
       },
-      options: Icons
+      options: ICON_OPTIONS
     }
   }
 } as ComponentMeta<typeof IconButton>;

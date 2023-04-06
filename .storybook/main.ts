@@ -2,6 +2,7 @@ import * as path from 'path';
 import { StorybookConfig } from '@storybook/core-common';
 
 const config: StorybookConfig = {
+  staticDirs: ['./public'],
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: [
     '@storybook/addon-links',

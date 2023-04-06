@@ -68,7 +68,8 @@ describe('Button size', () => {
 
 describe('Button variant', () => {
   test('should correct show contained variant when provided', () => {
-    const classNames = 'border-primary bg-primary text-white hover:border-grey hover:bg-grey';
+    const classNames =
+      'border-black-100 bg-black-100 text-white hover:border-gray-300 hover:bg-gray-300';
     render(<Button {...buttonProps} variant='contained' />);
 
     const container = screen.getByTestId(BUTTON_TEST_IDS.CONTAINER);

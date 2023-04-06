@@ -12,6 +12,10 @@ export interface ButtonProps extends ReactTagProps<'button'> {
    */
   loading?: boolean;
   /**
+   * loading
+   */
+  href?: string;
+  /**
    * start icon
    */
   startIcon?: React.ReactNode;
@@ -38,15 +42,16 @@ export const BUTTON_TEST_IDS = {
 };
 
 const classNames = cva(
-  'w-full flex justify-center rounded-full border-[1.5px] align-middle text-[16px]',
+  'w-full flex justify-center rounded-full border-[0.094rem] items-center text-[1rem] title-2',
   {
     variants: {
       size: {
-        medium: 'min-h-[60px] py-[18px] px-[24px]',
-        small: 'py-[6px] px-[20px]'
+        medium: 'min-h-[3.75rem] py-[1.125rem] px-[1.5rem]',
+        small: 'py-[0.375rem] px-[1.25rem]'
       },
       variant: {
-        contained: 'border-primary bg-primary text-white hover:border-grey hover:bg-grey',
+        contained:
+          'border-black-100 bg-black-100 text-white hover:border-gray-300 hover:bg-gray-300',
         outlined: 'border-secondary hover:border-primary'
       }
     }
@@ -61,6 +66,7 @@ export const Button: React.FC<ButtonProps> = ({
   loading,
   startIcon,
   endIcon,
+  href,
   size = 'medium',
   variant = 'contained',
   ...props
@@ -83,7 +89,7 @@ export const Button: React.FC<ButtonProps> = ({
       <span data-testid={BUTTON_TEST_IDS.LOADER}>
         <svg
           aria-hidden='true'
-          className='inline h-4 w-4 animate-spin text-grey'
+          className='text-grey inline h-4 w-4 animate-spin'
           viewBox='0 0 100 101'
         >
           <path

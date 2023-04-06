@@ -2,16 +2,16 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
-    'airbnb-typescript/base',
-    // 'plugin:@typescript-eslint/recommended',
-    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'airbnb-typescript',
+    'plugin:@next/next/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier'
   ],
   env: {
     browser: true,
     es2021: true
   },
-  parser: '@typescript-eslint/parser',
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
@@ -27,9 +27,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['prettier'],
+  plugins: ['@next/eslint-plugin-next'],
   rules: {
     '@typescript-eslint/no-shadow': 0,
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { prefer: 'type-imports', disallowTypeAnnotations: false }
+    ],
     'react/function-component-definition': [
       2,
       {

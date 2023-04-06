@@ -1,7 +1,12 @@
-import { cva } from 'class-variance-authority';
-
-export type TypographyVariant = 'title-1';
-export type TypographyTag = 'h1' | 'h2' | 'span' | 'div';
+export type TypographyVariant =
+  | 'title-1'
+  | 'title-2'
+  | 'title-3'
+  | 'body-1'
+  | 'body-2'
+  | 'body-3'
+  | 'link';
+export type TypographyTag = 'h1' | 'h2' | 'span' | 'div' | 'p';
 export interface TypographyProps {
   /**
    * variant
@@ -21,19 +26,11 @@ export const TYPOGRAPHY_TEST_IDS = {
   CONTAINER: 'typography-container'
 };
 
-const classNames = cva('', {
-  variants: {
-    variant: {
-      'title-1': 'font-nike font-[800] text-[72px]'
-    }
-  }
-});
-
 /**
  * Typography component
  */
 export const Typography: React.FC<TypographyProps> = ({ children, variant, tag: Tag = 'div' }) => (
-  <Tag className={classNames({ variant })} data-testid={TYPOGRAPHY_TEST_IDS.CONTAINER}>
+  <Tag className={variant} data-testid={TYPOGRAPHY_TEST_IDS.CONTAINER}>
     {children}
   </Tag>
 );

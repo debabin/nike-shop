@@ -8,5 +8,3 @@ export const ICON_OPTIONS = Object.entries(ICONS).reduce<IconOptions>(
   },
   {} as IconOptions
 );
-
-console.log('ICON_OPTIONS', Object.entries(ICON_OPTIONS));

@@ -1,0 +1,17 @@
+fragment CountryFragment on Country {
+  code3
+  code2
+  createdAt
+  updatedAt
+  publishedAt
+  language {
+    data {
+      ...LanguageEntityFragment
+    }
+  }
+  page_home {
+    data {
+      id
+    }
+  }
+}

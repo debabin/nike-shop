@@ -3,10 +3,10 @@ export const FindIcon: React.FC<ReactTagProps<'svg'>> = (props) => (
     aria-hidden='true'
     fill='none'
     focusable='false'
-    height='24px'
+    height='1.5rem'
     role='img'
     viewBox='0 0 24 24'
-    width='24px'
+    width='1.5rem'
     {...props}
   >
     <path

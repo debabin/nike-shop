@@ -54,6 +54,8 @@ module.exports = {
     ],
     'react/no-array-index-key': 0,
     'no-param-reassign': 0,
+    'no-restricted-syntax': 0,
+    '@typescript-eslint/no-loop-func': 0,
     'sort-keys': [1, 'asc', { natural: true, allowLineSeparatedGroups: true }],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-sort-props': [

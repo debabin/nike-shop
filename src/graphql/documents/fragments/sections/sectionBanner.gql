@@ -1,0 +1,15 @@
+fragment SectionBannerFragment on SectionBanner {
+  sectionTitle
+  preSectionTitle
+  subSectionTitle
+  linkButton {
+    ...ButtonFragment
+  }
+  video {
+    data {
+      attributes {
+        ...FileFragment
+      }
+    }
+  }
+}

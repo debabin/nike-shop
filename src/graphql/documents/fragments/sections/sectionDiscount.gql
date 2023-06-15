@@ -1,0 +1,5 @@
+fragment SectionDiscountFragment on SectionDiscount {
+  items {
+    ...DiscountCard
+  }
+}

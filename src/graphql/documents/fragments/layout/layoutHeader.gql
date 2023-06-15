@@ -1,0 +1,24 @@
+fragment LayoutHeaderFragment on LayoutHeader {
+  menTitle
+  menLinkList {
+    ...LinkListFragment
+  }
+  newTitle
+  newLinkList {
+    ...LinkListFragment
+  }
+  womenTitle
+  womenLinkList {
+    ...LinkListFragment
+  }
+  kidsTitle
+  kidsLinkList {
+    ...LinkListFragment
+  }
+  favoritesIconButton {
+    ...IconButtonFragment
+  }
+  cartIconButton {
+    ...IconButtonFragment
+  }
+}

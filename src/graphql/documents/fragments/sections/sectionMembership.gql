@@ -1,0 +1,5 @@
+fragment SectionMembershipFragment on SectionMembership {
+  card {
+    ...FigureFragment
+  }
+}

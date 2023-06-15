@@ -1,0 +1,38 @@
+fragment PageHomeFragment on PageHome {
+  title
+  layout_header {
+    data {
+      id
+    }
+  }
+  layout_pre_header {
+    data {
+      id
+    }
+  }
+  layout_subfooter {
+    data {
+      id
+    }
+  }
+  layout_footer {
+    data {
+      id
+    }
+  }
+  section_membership {
+    data {
+      id
+    }
+  }
+  section_discount {
+    data {
+      id
+    }
+  }
+  section_banner {
+    data {
+      id
+    }
+  }
+}

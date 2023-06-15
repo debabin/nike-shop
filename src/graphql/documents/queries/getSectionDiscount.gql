@@ -1,0 +1,9 @@
+query getSectionDiscount($id: ID, $locale: I18NLocaleCode) {
+  sectionDiscount(id: $id, locale: $locale) {
+    data {
+      attributes {
+        ...SectionDiscountFragment
+      }
+    }
+  }
+}

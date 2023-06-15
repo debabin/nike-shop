@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 
 import * as Icons from '@/ui/icons';
 
@@ -11,9 +11,10 @@ const iconButtonProps: IconButtonProps = {
   icon: <Icons.LikeIcon />
 };
 
-const IconButtonTemplate: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />;
+type Story = StoryObj<typeof IconButton>;
+const IconButtonTemplate: Story = { render: (args) => <IconButton {...args} /> };
 
-export const Playground: ComponentStory<typeof IconButton> = IconButtonTemplate.bind({});
+export const Playground = { ...IconButtonTemplate };
 Playground.args = iconButtonProps;
 
 export default {
@@ -27,4 +28,4 @@ export default {
       options: ICON_OPTIONS
     }
   }
-} as ComponentMeta<typeof IconButton>;
+} as Meta<typeof IconButton>;

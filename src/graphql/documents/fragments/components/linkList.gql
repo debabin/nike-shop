@@ -1,0 +1,7 @@
+fragment LinkListFragment on ComponentUiLinkList {
+  id
+  title
+  link {
+    ...LinkFragment
+  }
+}

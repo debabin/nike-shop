@@ -1,0 +1,5 @@
+fragment LayoutSubfooterFragment on LayoutSubfooter {
+  links {
+    ...LinkListFragment
+  }
+}

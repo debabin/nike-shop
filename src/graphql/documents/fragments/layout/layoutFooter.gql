@@ -1,0 +1,13 @@
+fragment LayoutFooterFragment on LayoutFooter {
+  title
+  mainLinks {
+    ...LinkListFragment
+  }
+  links {
+    ...LinkListFragment
+  }
+  supportLinks {
+    ...LinkListFragment
+  }
+  socilas
+}

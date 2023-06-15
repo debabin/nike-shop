@@ -1,0 +1,10 @@
+query getCountries {
+  countries {
+    data {
+      id
+      attributes {
+        ...CountryFragment
+      }
+    }
+  }
+}

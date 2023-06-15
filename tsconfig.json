@@ -16,6 +16,7 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
+      "@/gql": ["src/graphql/client"],
       "@/assets/*": ["assets/*"],
       "@/sections/*": ["src/sections/*"],
       "@/utils/helpers": ["src/utils/helpers"],

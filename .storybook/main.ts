@@ -1,7 +1,6 @@
 import * as path from 'path';
-import { StorybookConfig } from '@storybook/core-common';
 
-const config: StorybookConfig = {
+const config = {
   staticDirs: ['./public'],
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: [
@@ -16,10 +15,11 @@ const config: StorybookConfig = {
       }
     }
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-webpack5'
+  framework: {
+    name: '@storybook/nextjs',
+    options: {}
   },
+  core: {},
   webpackFinal: (config) => {
     if (config.resolve) {
       config.resolve.alias = {
@@ -28,9 +28,10 @@ const config: StorybookConfig = {
         '@/ui/icons': path.resolve(__dirname, '../src/components/icons')
       };
     }
-
     return config;
+  },
+  docs: {
+    autodocs: true
   }
 };
-
 export default config;

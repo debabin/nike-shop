@@ -1,0 +1,10 @@
+query getPageHome($id: ID, $locale: I18NLocaleCode) {
+  pageHome(id: $id, locale: $locale) {
+    data {
+      id
+      attributes {
+        ...PageHomeFragment
+      }
+    }
+  }
+}

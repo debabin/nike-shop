@@ -37,7 +37,7 @@ export const CAROUSELITEM_TEST_IDS = {
  */
 export const ItemCard: React.FC<ItemCardProps> = ({ image, title, type, price }) => (
   <div data-testid={CAROUSELITEM_TEST_IDS.CONTAINER}>
-    <div className='relative h-[30rem] w-[30rem]'>
+    <div className='relative h-[28rem] w-[28rem]'>
       <Image fill data-testid={CAROUSELITEM_TEST_IDS.IMAGE} {...image} />
     </div>
 

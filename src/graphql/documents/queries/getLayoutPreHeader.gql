@@ -1,0 +1,9 @@
+query getLayoutPreHeader($id: ID, $locale: I18NLocaleCode) {
+  layoutPreHeader(id: $id, locale: $locale) {
+    data {
+      attributes {
+        ...LayoutPreHeaderFragment
+      }
+    }
+  }
+}

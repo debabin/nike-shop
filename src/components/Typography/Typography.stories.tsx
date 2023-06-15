@@ -1,9 +1,9 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import type { TypographyProps } from './Typography';
+import type { TypographyProps, TypographyTag } from './Typography';
 import { Typography } from './Typography';
 
-const typographiesProps: TypographyProps[] = [
+const typographiesProps: TypographyProps<TypographyTag>[] = [
   {
     children: 'title 1',
     variant: 'title-1'
@@ -11,6 +11,18 @@ const typographiesProps: TypographyProps[] = [
   {
     children: 'title 2',
     variant: 'title-2'
+  },
+  {
+    children: 'title 3',
+    variant: 'title-3'
+  },
+  {
+    children: 'sub title',
+    variant: 'sub-title'
+  },
+  {
+    children: 'body 1',
+    variant: 'body-1'
   },
   {
     children: 'body 2',
@@ -26,14 +38,16 @@ const typographiesProps: TypographyProps[] = [
   }
 ];
 
-const TypographyTemplate: ComponentStory<typeof Typography> = (args) => <Typography {...args} />;
-
-const typographyProps: TypographyProps = {
+const typographyProps: TypographyProps<TypographyTag> = {
   children: 'typography',
   tag: 'div',
   variant: 'title-1'
 };
-export const Playground: ComponentStory<typeof Typography> = TypographyTemplate.bind({});
+
+type Story = StoryObj<typeof Typography>;
+const TypographyTemplate: Story = { render: (args) => <Typography {...args} /> };
+
+export const Playground = { ...TypographyTemplate };
 Playground.args = typographyProps;
 
 export const AllTypographies = () => (
@@ -47,4 +61,4 @@ export const AllTypographies = () => (
 export default {
   component: Typography,
   title: 'ui/typography'
-} as ComponentMeta<typeof Typography>;
+} as Meta<typeof Typography>;

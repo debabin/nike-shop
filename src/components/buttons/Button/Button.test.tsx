@@ -48,7 +48,7 @@ describe('Button endIcon', () => {
 
 describe('Button size', () => {
   test('should correct show medium size when provided', () => {
-    const classNames = 'min-h-[60px] py-[18px] px-[24px]';
+    const classNames = 'min-h-[3.75rem] py-[1.125rem] px-[1.5rem]';
     render(<Button {...buttonProps} size='medium' />);
 
     const container = screen.getByTestId(BUTTON_TEST_IDS.CONTAINER);
@@ -57,7 +57,7 @@ describe('Button size', () => {
   });
 
   test('should correct show small size when provided', () => {
-    const classNames = 'py-[6px] px-[20px]';
+    const classNames = 'py-[0.375rem] px-[1.25rem]';
     render(<Button {...buttonProps} size='small' />);
 
     const container = screen.getByTestId(BUTTON_TEST_IDS.CONTAINER);
@@ -78,7 +78,7 @@ describe('Button variant', () => {
   });
 
   test('should correct show outlined variant when provided', () => {
-    const classNames = 'border-secondary hover:border-primary';
+    const classNames = 'border-black hover:border-black';
     render(<Button {...buttonProps} variant='outlined' />);
 
     const container = screen.getByTestId(BUTTON_TEST_IDS.CONTAINER);
@@ -88,14 +88,6 @@ describe('Button variant', () => {
 });
 
 describe('Button', () => {
-  test('should correct show outlined variant when provided', () => {
-    render(<Button {...buttonProps} />);
-
-    const children = screen.getByTestId(BUTTON_TEST_IDS.CHILDREN);
-
-    expect(children).toHaveTextContent(buttonProps.children);
-  });
-
   test('should display loader when loading', () => {
     render(<Button {...buttonProps} loading />);
 

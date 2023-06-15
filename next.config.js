@@ -4,13 +4,20 @@ const nextConfig = {
   // experimental: {
   //   forceSwcTransforms: true
   // },
-  i18n: {
-    locales: ['en', 'ru'],
-    defaultLocale: 'en'
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '**'
+      }
+    ]
   },
   compiler: {
     removeConsole: { exclude: ['info', 'error'] },
     reactRemoveProperties: { properties: ['^data-testid$'] }
+  },
+  env: {
+    STRAPI_URL: 'http://localhost:1337'
   }
 };
 

@@ -15,16 +15,32 @@
     @apply font-helvetica text-[1rem] font-[600];
   }
 
+  .title-4 {
+    @apply font-helvetica text-[0.9rem] font-[600];
+  }
+
+  .title-5 {
+    @apply font-helvetica text-[0.7rem] font-[600];
+  }
+
   .link {
     @apply font-helvetica text-[0.75rem] font-[600] leading-[0.875rem];
   }
 
   .body-1 {
-    @apply font-helvetica text-[0.75rem] font-[500] leading-[0.875rem];
+    @apply font-helvetica text-[1rem] font-[500] leading-[0.875rem];
+  }
+
+  .body-2 {
+    @apply font-helvetica text-[0.9rem] font-[400] leading-[1.2rem];
   }
 
   .body-3 {
-    @apply font-helvetica text-[14px] font-[400] leading-[20px];
+    @apply font-helvetica text-[0.8rem] font-[400] leading-[1rem];
+  }
+
+  .sub-title {
+    @apply font-nike text-[1.25rem] font-[400] leading-[1.75rem];
   }
 }
 
@@ -147,7 +163,6 @@
 
 html,
 body {
-  max-width: 100vw;
   overflow-x: hidden;
 }
 

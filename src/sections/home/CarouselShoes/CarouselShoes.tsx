@@ -2,7 +2,7 @@ import React from 'react';
 import type { ItemCardProps } from 'src/components/cards';
 import { ItemCard } from 'src/components/cards';
 
-import { Typography } from '@/ui';
+import { Typography, ArrowButton } from '@/ui';
 
 import shoes from '../../../../.storybook/public/assets/images/shoes.webp';
 
@@ -87,7 +87,6 @@ export const CarouselShoes = () => {
     const container = scrollRef.current;
     const handler = () => {
       if (container) {
-        const containerScrollWidth = scrollRef.current.scrollWidth - scrollRef.current.offsetWidth;
         const elementWidth = scrollRef.current.scrollWidth / items.length;
         const newActiveNumber =
           1 +
@@ -97,33 +96,6 @@ export const CarouselShoes = () => {
               Math.ceil(scrollRef.current.scrollWidth) - Math.ceil(scrollRef.current.scrollLeft)
             ) / Math.floor(elementWidth)
           );
-
-        console.log('@elementWidth', elementWidth);
-        console.log('@scrollRef.current.scrollWidth', scrollRef.current.scrollWidth);
-        console.log('@scrollRef.current.clientWidth', scrollRef.current.clientWidth);
-        console.log('@scrollRef.current.scrollLeft', scrollRef.current.scrollLeft);
-        console.log(
-          '-',
-          scrollRef.current.scrollWidth -
-            scrollRef.current.scrollLeft -
-            scrollRef.current.clientWidth
-        );
-        console.log(
-          '/',
-          (scrollRef.current.scrollWidth -
-            scrollRef.current.scrollLeft -
-            scrollRef.current.clientWidth) /
-            elementWidth
-        );
-        console.log(
-          'newActiveNumber',
-
-          items.length -
-            (scrollRef.current.scrollWidth -
-              scrollRef.current.scrollLeft -
-              scrollRef.current.clientWidth) /
-              elementWidth
-        );
 
         if (activeNumber !== newActiveNumber) {
           setActiveNumber(newActiveNumber);
@@ -164,26 +136,20 @@ export const CarouselShoes = () => {
     setActiveNumber(prevActiveNumber);
   };
 
-  console.log('activeNumber', activeNumber);
   const isBackDisabled = activeNumber === 1;
-  const isNextDisabled = items.length === activeNumber;
+  const isNextDisabled = items.length - 1 === activeNumber;
 
   return (
-    <section className='flex flex-col items-center justify-between '>
-      <div className='w-full xl:container xl:mx-auto'>
-        <div className='flex  items-center justify-between px-[2.25rem]'>
+    <section className='flex flex-col items-center justify-between'>
+      <div className='w-full max-w-[90rem] xl:mx-auto'>
+        <div className='flex items-center justify-between px-[2.25rem]'>
           <Typography tag='h2' variant='title-3'>
             Trending This Week
           </Typography>
 
-          <div className='flex items-center justify-between gap-[0.938rem]'>
-            <button disabled={isBackDisabled} onClick={onBackClick}>
-              back
-            </button>
-
-            <button disabled={isNextDisabled} onClick={onNextClick}>
-              next
-            </button>
+          <div className='hidden items-center justify-between gap-[0.938rem] md:flex'>
+            <ArrowButton direction='left' disabled={isBackDisabled} onClick={onBackClick} />
+            <ArrowButton disabled={isNextDisabled} onClick={onNextClick} />
           </div>
         </div>
 

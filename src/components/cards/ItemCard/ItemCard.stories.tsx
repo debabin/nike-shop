@@ -6,6 +6,7 @@ import type { ItemCardProps } from './ItemCard';
 import { ItemCard } from './ItemCard';
 
 const itemCardProps: ItemCardProps = {
+  id: '1',
   image: {
     alt: 'image',
     src: shoes

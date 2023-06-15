@@ -52,7 +52,7 @@ const classNames = cva(
       variant: {
         contained:
           'border-black-100 bg-black-100 text-white hover:border-gray-300 hover:bg-gray-300',
-        outlined: 'border-secondary hover:border-primary'
+        outlined: 'border-black hover:border-black'
       }
     }
   }

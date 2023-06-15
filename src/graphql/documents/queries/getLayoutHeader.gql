@@ -1,0 +1,9 @@
+query getLayoutHeader($id: ID, $locale: I18NLocaleCode) {
+  layoutHeader(id: $id, locale: $locale) {
+    data {
+      attributes {
+        ...LayoutHeaderFragment
+      }
+    }
+  }
+}

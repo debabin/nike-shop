@@ -1,0 +1,9 @@
+query getSectionTrend($id: ID, $locale: I18NLocaleCode) {
+  sectionTrend(id: $id, locale: $locale) {
+    data {
+      attributes {
+        ...SectionTrendFragment
+      }
+    }
+  }
+}

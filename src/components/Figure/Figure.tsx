@@ -28,7 +28,7 @@ export const FIGURE_TEST_IDS = {
  * Figure component
  */
 export const Figure: React.FC<FigureProps> = ({ image, caption, buttons, ...props }) => (
-  <figure className='relative h-[18rem] w-[100%]' role='img' {...props}>
+  <figure className='relative h-[100%] w-[100%]' role='img' {...props}>
     <Image fill className='object-cover' data-testid={FIGURE_TEST_IDS.IMAGE} {...image} />
 
     <figcaption className='absolute bottom-6 left-6 z-[1]'>

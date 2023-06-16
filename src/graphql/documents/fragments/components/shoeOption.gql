@@ -1,0 +1,10 @@
+fragment ShoeOptionFragment on ComponentEntityShoeOption {
+  color
+  medias {
+    data {
+      attributes {
+        ...FileFragment
+      }
+    }
+  }
+}

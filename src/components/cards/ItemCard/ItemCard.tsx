@@ -43,10 +43,10 @@ export const ItemCard: React.FC<ItemCardProps> = ({ image, title, type, price })
 
     <div className='mt-[0.75rem] flex justify-between align-top'>
       <div>
-        <h4 className='title-2' data-testid={CAROUSELITEM_TEST_IDS.TITLE}>
+        <h4 className='title-3' data-testid={CAROUSELITEM_TEST_IDS.TITLE}>
           {title}
         </h4>
-        <p className='body-2 text-grey' data-testid={CAROUSELITEM_TEST_IDS.TYPE}>
+        <p className='body-3 text-grey' data-testid={CAROUSELITEM_TEST_IDS.TYPE}>
           {type}
         </p>
       </div>

@@ -35,4 +35,9 @@ fragment PageHomeFragment on PageHome {
       id
     }
   }
+  section_trend {
+    data {
+      id
+    }
+  }
 }

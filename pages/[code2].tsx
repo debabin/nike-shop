@@ -9,10 +9,11 @@ import type {
   GetLayoutSubfooterQuery,
   GetSectionBannerQuery,
   GetSectionDiscountQuery,
-  GetSectionMembershipQuery
+  GetSectionMembershipQuery,
+  GetSectionTrendQuery
 } from '@/gql';
 import { gql } from '@/gql';
-import { Banner, CarouselShoes, DiscountBanner, Membership } from '@/sections/home';
+import { Banner, DiscountBanner, Membership, Trend } from '@/sections/home';
 import { Header, PreHeader, SubFooter, Footer } from '@/ui';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -34,6 +35,7 @@ export const getStaticProps: GetStaticProps<{
   sectionBanner: GetSectionBannerQuery['sectionBanner'];
   sectionMembership: GetSectionMembershipQuery['sectionMembership'];
   sectionDiscount: GetSectionDiscountQuery['sectionDiscount'];
+  sectionTrend: GetSectionTrendQuery['sectionTrend'];
 }> = async ({ params }) => {
   const { code2 } = params as Params;
   const { countries } = await gql.getCountries();
@@ -52,6 +54,11 @@ export const getStaticProps: GetStaticProps<{
 
   const { pageHome } = await gql.getPageHome({
     id: country.attributes.page_home.data.id,
+    locale
+  });
+
+  const { sectionTrend } = await gql.getSectionTrend({
+    id: pageHome.data.attributes.section_trend.data.id,
     locale
   });
 
@@ -92,18 +99,20 @@ export const getStaticProps: GetStaticProps<{
 
   return {
     props: {
+      layoutFooter,
       layoutHeader,
       layoutPreHeader,
-      layoutFooter,
       layoutSubfooter,
       sectionBanner,
       sectionDiscount,
-      sectionMembership
+      sectionMembership,
+      sectionTrend
     }
   };
 };
 
 const Home = ({
+  sectionTrend,
   sectionBanner,
   sectionMembership,
   sectionDiscount,
@@ -117,7 +126,7 @@ const Home = ({
     {layoutHeader && <Header data={layoutHeader.data.attributes} />}
     {sectionDiscount && <DiscountBanner data={sectionDiscount.data.attributes} />}
     {sectionBanner && <Banner data={sectionBanner.data.attributes} />}
-    <CarouselShoes />
+    {sectionTrend && <Trend data={sectionTrend.data.attributes} />}
     {sectionMembership && <Membership data={sectionMembership.data.attributes} />}
     {layoutSubfooter && <SubFooter data={layoutSubfooter.data.attributes} />}
     {layoutFooter && <Footer data={layoutFooter.data.attributes} />}

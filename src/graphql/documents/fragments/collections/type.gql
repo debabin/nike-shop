@@ -1,0 +1,3 @@
+fragment TypeFragment on Type {
+  name
+}

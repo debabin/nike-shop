@@ -1,0 +1,17 @@
+fragment ShoeFragment on Shoe {
+  name
+  type {
+    data {
+      attributes {
+        ...TypeFragment
+      }
+    }
+  }
+  description
+  content
+  options {
+    ...ShoeOptionFragment
+  }
+  details
+  price
+}

@@ -1,0 +1,22 @@
+fragment SectionTrendFragment on SectionTrend {
+  sectionTitle
+  shoes {
+    data {
+      id
+      attributes {
+        name
+        options {
+          ...ShoeOptionFragment
+        }
+        type {
+          data {
+            attributes {
+              ...TypeFragment
+            }
+          }
+        }
+        price
+      }
+    }
+  }
+}

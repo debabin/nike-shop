@@ -14,18 +14,23 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/gql": ["src/graphql/client"],
+      "@/gql": ["app/_src/graphql/client"],
       "@/assets/*": ["assets/*"],
-      "@/sections/*": ["src/sections/*"],
-      "@/utils/helpers": ["src/utils/helpers"],
-      "@/utils/constants": ["src/utils/constants"],
-      "@/utils/api": ["src/utils/api"],
-      "@/ui": ["src/components"],
-      "@/ui/icons": ["src/components/icons"]
-    }
+      "@/sections": ["app/_src/sections"],
+      "@/utils/helpers": ["app/_src/utils/helpers"],
+      "@/utils/constants": ["app/_src/utils/constants"],
+      "@/utils/api": ["app/_src/utils/api"],
+      "@/ui": ["app/_src/components"],
+      "@/ui/icons": ["app/_src/components/common/icons"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

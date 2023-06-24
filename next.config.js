@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // experimental: {
-  //   forceSwcTransforms: true
-  // },
+  experimental: {
+    forceSwcTransforms: true
+  },
   images: {
     remotePatterns: [
       {
@@ -13,11 +13,10 @@ const nextConfig = {
     ]
   },
   compiler: {
-    removeConsole: { exclude: ['info', 'error'] },
     reactRemoveProperties: { properties: ['^data-testid$'] }
   },
   env: {
-    STRAPI_URL: 'http://localhost:1337'
+    STRAPI_URL: 'http://127.0.0.1:1337'
   }
 };
 

@@ -1,1 +1,1 @@
-type ReactTagProps<T> = import('react').ComponentPropsWithRef<T>;
+type ReactTagProps<T> = import('react').ComponentProps<T>;

@@ -1,4 +1,0 @@
-export * from './buttons';
-export * from './layout';
-export * from './Typography/Typography';
-export * from './Figure/Figure';

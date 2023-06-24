@@ -11,6 +11,8 @@ Icon
 ._*
 
 .next
+.swc
+.storybook
 
 ############################
 # Linux

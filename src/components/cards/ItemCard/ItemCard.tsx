@@ -1,6 +1,3 @@
-import type { ImageProps } from 'next/image';
-import Image from 'next/image';
-
 export interface ItemCardProps {
   /**
    * id
@@ -9,7 +6,7 @@ export interface ItemCardProps {
   /**
    * image
    */
-  image: ImageProps;
+  image: any;
   /**
    * title
    */
@@ -38,7 +35,7 @@ export const CAROUSELITEM_TEST_IDS = {
 export const ItemCard: React.FC<ItemCardProps> = ({ image, title, type, price }) => (
   <div data-testid={CAROUSELITEM_TEST_IDS.CONTAINER}>
     <div className='relative h-[28rem] w-[28rem]'>
-      <Image fill data-testid={CAROUSELITEM_TEST_IDS.IMAGE} {...image} />
+      <img data-testid={CAROUSELITEM_TEST_IDS.IMAGE} {...image} />
     </div>
 
     <div className='mt-[0.75rem] flex justify-between align-top'>

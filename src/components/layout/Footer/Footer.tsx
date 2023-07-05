@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import type { GetLayoutFooterQuery } from '@/gql';
 import { Typography } from '@/ui';
 import { InstagramIcon, TwitterIcon, YoutubeIcon, LocationIcon } from '@/ui/icons';
@@ -26,9 +24,9 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
           <ul className='flex flex-col gap-[0.4rem]'>
             {data.mainLinks.link.map((link) => (
               <li key={link.id}>
-                <Link href={link.href}>
+                <a href={link.href}>
                   <Typography variant='title-5'>{link.label}</Typography>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -39,9 +37,9 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
               <ul className='flex flex-col gap-[0.5rem]'>
                 {link.link.map((link) => (
                   <li key={link.id} className='text-gray-250'>
-                    <Link href={link.href}>
+                    <a href={link.href}>
                       <Typography variant='body-3'>{link.label}</Typography>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -51,16 +49,16 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
         <div className='flex gap-[1rem]'>
           {Array.isArray(data.socilas) &&
             (data.socilas as string[]).map((social) => (
-              <Link href={`/${social}`}>{socials[social]}</Link>
+              <a href={`/${social}`}>{socials[social]}</a>
             ))}
         </div>
       </div>
 
       <ul className='flex w-full justify-end gap-[1rem] text-end text-gray-300'>
         {data.supportLinks.link.map((link) => (
-          <Link href={link.href}>
+          <a href={link.href}>
             <Typography variant='body-3'>{link.label}</Typography>
-          </Link>
+          </a>
         ))}
       </ul>
 
@@ -68,11 +66,11 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
         <div className='flex items-center gap-[1rem]'>
           <div className='items-ceter flex cursor-pointer gap-[1rem]'>
             <LocationIcon className='fill-white' />
-            <Link href='/'>
+            <a href='/'>
               <Typography className='text-white' variant='title-4'>
                 Cookie Settings
               </Typography>
-            </Link>
+            </a>
           </div>
           <Typography className='text-gray-300' variant='body-3'>
             Cookie Settings

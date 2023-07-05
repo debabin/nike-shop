@@ -1,12 +1,11 @@
-import type { ImageProps } from 'next/image';
-import Image from 'next/image';
+import { Image } from '@astrojs/image/components';
 import React from 'react';
 
 export interface FigureProps extends ReactTagProps<'figure'> {
   /**
    * image
    */
-  image: ImageProps;
+  image: any;
   /**
    * caption
    */
@@ -29,7 +28,7 @@ export const FIGURE_TEST_IDS = {
  */
 export const Figure: React.FC<FigureProps> = ({ image, caption, buttons, ...props }) => (
   <figure className='relative h-[100%] w-[100%]' role='img' {...props}>
-    <Image fill className='object-cover' data-testid={FIGURE_TEST_IDS.IMAGE} {...image} />
+    <img className='object-cover' data-testid={FIGURE_TEST_IDS.IMAGE} {...image} />
 
     <figcaption className='absolute bottom-6 left-6 z-[1]'>
       {caption && (

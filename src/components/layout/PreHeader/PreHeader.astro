@@ -1,0 +1,49 @@
+---
+import type { GetLayoutPreHeaderQuery } from '@/gql';
+import { Typography } from '@/ui';
+import { JordanIcon, ConverseIcon } from '@/ui/icons';
+
+type LayoutPreHeaderData = GetLayoutPreHeaderQuery['layoutPreHeader']['data']['attributes'];
+interface Props {
+  data: LayoutPreHeaderData;
+}
+const { data } = Astro.props;
+---
+
+<div class='h-max-[60px] flex items-center justify-between bg-gray-100 px-[36px] py-[10px]'>
+  <ul class='flex'>
+    {
+      data.jordanIconButton && data.jordanIconButton.href && (
+        <li class='px-[12px]'>
+          <a href={data.jordanIconButton.href}>
+            <JordanIcon />
+          </a>
+        </li>
+      )
+    }
+    {
+      data.coverseIconButton && data.coverseIconButton.href && (
+        <li class='px-[12px]'>
+          <a href={data.coverseIconButton.href}>
+            <ConverseIcon />
+          </a>
+        </li>
+      )
+    }
+  </ul>
+  <div class='flex items-center justify-center'>
+    {
+      data.links.link.map((link, index) => (
+        <>
+          <a class='mx-[8px] px-[8px] py-[4px]' href={link.href}>
+            <Typography variant='link'>{link.label}</Typography>
+          </a>
+
+          <Typography tag='div' variant='link'>
+            {data.links.link.length - 1 !== index && <span>|</span>}
+          </Typography>
+        </>
+      ))
+    }
+  </div>
+</div>

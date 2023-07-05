@@ -1,5 +1,5 @@
 overwrite: true
-schema: http://localhost:1337/graphql/playground
+schema: http://127.0.0.1:1337/graphql/playground
 documents: './src/graphql/documents/**/*.gql'
 generates:
   ./src/graphql/__generated__.ts:

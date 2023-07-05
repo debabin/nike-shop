@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import type { GetLayoutHeaderQuery } from '@/gql';
 import { Typography, IconButton } from '@/ui';
 import { CartIcon, LikeIcon, NikeIcon } from '@/ui/icons';
@@ -56,14 +54,14 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
       </div>
       <div>
         {data.favoritesIconButton && data.favoritesIconButton.href && (
-          <Link className='mr-[0.75rem]' href={data.favoritesIconButton.href}>
+          <a className='mr-[0.75rem]' href={data.favoritesIconButton.href}>
             <IconButton icon={<LikeIcon />} />
-          </Link>
+          </a>
         )}
         {data.cartIconButton && data.cartIconButton.href && (
-          <Link href={data.cartIconButton.href}>
+          <a href={data.cartIconButton.href}>
             <IconButton icon={<CartIcon />} />
-          </Link>
+          </a>
         )}
       </div>
     </header>

@@ -22,4 +22,4 @@ export class API {
   }
 }
 
-export const strapiApi = new API({ baseUrl: 'http://localhost:1337/api' });
+export const strapiApi = new API({ baseUrl: 'http://127.0.0.1:1337/api' });

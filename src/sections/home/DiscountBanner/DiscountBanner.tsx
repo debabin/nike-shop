@@ -9,8 +9,8 @@ interface DiscountBannerProps {
   data: LayoutPreHeaderData;
 }
 
-const DISCOUNT_SHOWING_INTERVAL = 5000;
 export const DiscountBanner: React.FC<DiscountBannerProps> = ({ data }) => {
+  const DISCOUNT_SHOWING_INTERVAL = 5000;
   const [direction, setDirection] = React.useState<'left' | 'right'>('right');
   const [activeIndex, setActiveIndex] = React.useState(0);
 

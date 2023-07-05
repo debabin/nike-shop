@@ -27,7 +27,6 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['@next/eslint-plugin-next'],
   rules: {
     '@typescript-eslint/no-shadow': 0,
     '@typescript-eslint/consistent-type-imports': [

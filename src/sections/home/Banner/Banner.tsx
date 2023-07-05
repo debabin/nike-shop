@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import type { GetSectionBannerQuery } from '@/gql';
 import { Typography, Button } from '@/ui';
 import { getFileUrl } from '@/utils/helpers';
@@ -29,9 +27,9 @@ export const Banner: React.FC<BannerProps> = ({ data }) => (
       {data.linkButton && (
         <div className='mt-[2rem] flex gap-[1rem]'>
           {data.linkButton.map((linkButton) => (
-            <Link key={linkButton.id} href={linkButton.href}>
+            <a key={linkButton.id} href={linkButton.href}>
               <Button size='small'>{linkButton.label}</Button>
-            </Link>
+            </a>
           ))}
         </div>
       )}

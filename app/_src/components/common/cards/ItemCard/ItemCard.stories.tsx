@@ -1,12 +1,11 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import shoes from '../../../../.storybook/public/assets/images/shoes.webp';
+import shoes from '@/.storybook/public/assets/images/shoes.webp';
 
 import type { ItemCardProps } from './ItemCard';
 import { ItemCard } from './ItemCard';
 
 const itemCardProps: ItemCardProps = {
-  id: '1',
   image: {
     alt: 'image',
     src: shoes
@@ -16,12 +15,13 @@ const itemCardProps: ItemCardProps = {
   price: '$1.0'
 };
 
-const ItemCardTemplate: ComponentStory<typeof ItemCard> = (args) => <ItemCard {...args} />;
+type Story = StoryObj<typeof ItemCard>;
+const ItemCardTemplate: Story = { render: (args) => <ItemCard {...args} /> };
 
-export const Playground: ComponentStory<typeof ItemCard> = ItemCardTemplate.bind({});
+export const Playground = { ...ItemCardTemplate };
 Playground.args = itemCardProps;
 
 export default {
   component: ItemCard,
   title: 'ui/cards/item card'
-} as ComponentMeta<typeof ItemCard>;
+} as Meta<typeof ItemCard>;

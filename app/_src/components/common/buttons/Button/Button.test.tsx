@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { LikeIcon } from 'app/_src/components/common/icons';
+import { LikeIcon } from '@/ui/icons';
 
 import type { ButtonProps } from './Button';
 import { Button, BUTTON_TEST_IDS } from './Button';
@@ -47,7 +47,7 @@ describe('Button endIcon', () => {
 
 describe('Button size', () => {
   test('should correct show medium size when provided', () => {
-    const classNames = 'min-h-[3.75rem] py-[1.125rem] px-[1.5rem]';
+    const classNames = 'min-h-[3.2rem] py-[1rem] px-[1.3rem]';
     render(<Button {...buttonProps} size='medium' />);
 
     const container = screen.getByTestId(BUTTON_TEST_IDS.CONTAINER);

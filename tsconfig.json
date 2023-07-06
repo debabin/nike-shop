@@ -23,7 +23,8 @@
       "@/utils/constants": ["app/_src/utils/constants"],
       "@/utils/api": ["app/_src/utils/api"],
       "@/ui": ["app/_src/components"],
-      "@/ui/icons": ["app/_src/components/common/icons"]
+      "@/ui/icons": ["app/_src/components/common/icons"],
+      "@/.storybook": [".storybook/*"]
     },
     "plugins": [
       {

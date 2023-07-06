@@ -37,10 +37,11 @@ export const Figure: React.FC<FigureProps> = ({ image, caption, buttons, ...prop
         </p>
       )}
       <div className='flex gap-[1rem]'>
-        {buttons.map((button) => (
+        {buttons.map((button, index) => (
           <button
+            key={index}
             className='title-2 mt-[1.5rem] flex items-center justify-center rounded-full bg-white px-[1.25rem] py-[0.575rem] text-[1rem] hover:bg-gray-200'
-            data-testid={FIGURE_TEST_IDS.BUTTON}
+            data-testid={`${FIGURE_TEST_IDS.BUTTON}-${index}`}
             {...button}
           />
         ))}

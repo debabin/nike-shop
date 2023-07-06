@@ -3,7 +3,7 @@ import { Carousel } from '@/ui';
 import { getFileUrl } from '@/utils/helpers';
 
 type SectionTrendData = GetSectionTrendQuery['sectionTrend']['data']['attributes'];
-interface TrendProps {
+export interface TrendProps {
   data: SectionTrendData;
 }
 

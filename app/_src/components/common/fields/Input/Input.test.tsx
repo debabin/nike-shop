@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { FindIcon } from 'app/_src/components/common/icons';
+
+import { FindIcon } from '@/ui/icons';
 
 import { Input, INPUT_TEST_IDS } from './Input';
 
-describe('Button icon', () => {
+describe('Input icon', () => {
   test('should display icon when provided', () => {
     render(<Input icon={<FindIcon />} />);
 

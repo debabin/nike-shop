@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import shoes from '../../../.storybook/public/assets/images/shoes.webp';
+import shoes from '@/.storybook/public/assets/images/shoes.webp';
 
 import type { FigureProps } from './Figure';
 import { Figure } from './Figure';
@@ -11,9 +11,11 @@ const figureProps: FigureProps = {
     src: shoes
   },
   caption: 'Hundreds of Workouts, Breathwork and More',
-  button: {
-    children: 'Nike Training Club'
-  }
+  buttons: [
+    {
+      children: 'Nike Training Club'
+    }
+  ]
 };
 
 type Story = StoryObj<typeof Figure>;

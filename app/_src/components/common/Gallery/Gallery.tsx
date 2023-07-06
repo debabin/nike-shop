@@ -12,6 +12,11 @@ export interface GalleryProps extends ReactTagProps<'figure'> {
   images: ImageProps[];
 }
 
+export const GALLERY_TEST_IDS = {
+  CONTAINER: 'gallery-container',
+  IMAGE: 'gallery-image'
+};
+
 export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [activeImageIndex, setActiveImageIndex] = React.useState(0);
 
@@ -26,11 +31,12 @@ export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   };
 
   return (
-    <div className='flex gap-[1rem]'>
+    <div className='flex gap-[1rem]' data-testId={GALLERY_TEST_IDS.CONTAINER}>
       <div className='flex flex-col gap-[1rem]'>
         {images.map((image, index) => (
           <div
             key={image.alt}
+            data-testid={`${GALLERY_TEST_IDS.IMAGE}-${index}`}
             className={classnames('relative h-[3.5rem] w-[3.5rem]', {
               'backdrop-opacity-50': index === activeImageIndex
             })}

@@ -1,4 +1,4 @@
-import { JordanIcon, ConverseIcon } from 'app/_src/components/common/icons';
+import { JordanIcon, ConverseIcon } from '@/ui/icons';
 import Link from 'next/link';
 import React from 'react';
 

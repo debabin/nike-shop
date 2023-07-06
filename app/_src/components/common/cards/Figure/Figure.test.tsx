@@ -4,9 +4,11 @@ import type { FigureProps } from './Figure';
 import { FIGURE_TEST_IDS, Figure } from './Figure';
 
 const figureProps = {
-  button: {
-    children: 'button text'
-  },
+  buttons: [
+    {
+      children: 'button text'
+    }
+  ],
   caption: 'caption text',
   image: {
     alt: 'image',
@@ -32,12 +34,14 @@ describe('Figure', () => {
     expect(caption).toHaveTextContent('caption text');
   });
 
-  test('should render button when provided', () => {
+  test('should render buttons when provided', () => {
     render(<Figure {...figureProps} />);
 
-    const button = screen.getByTestId(FIGURE_TEST_IDS.BUTTON);
+    figureProps.buttons.forEach((_, index) => {
+      const button = screen.getByTestId(`${FIGURE_TEST_IDS.BUTTON}-${index}`);
 
-    expect(button).toBeInTheDocument();
-    expect(button).toHaveTextContent('button text');
+      expect(button).toBeInTheDocument();
+      expect(button).toHaveTextContent('button text');
+    });
   });
 });

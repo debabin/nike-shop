@@ -1,10 +1,4 @@
-import {
-  InstagramIcon,
-  TwitterIcon,
-  YoutubeIcon,
-  LocationIcon,
-  FacebookIcon
-} from 'app/_src/components/common/icons';
+import { InstagramIcon, TwitterIcon, YoutubeIcon, LocationIcon, FacebookIcon } from '@/ui/icons';
 import Link from 'next/link';
 
 import type { GetLayoutFooterQuery } from '@/gql';

@@ -1,4 +1,4 @@
-import { CartIcon, LikeIcon, NikeIcon } from 'app/_src/components/common/icons';
+import { CartIcon, LikeIcon, NikeIcon } from '@/ui/icons';
 import Link from 'next/link';
 
 import type { GetLayoutHeaderQuery } from '@/gql';

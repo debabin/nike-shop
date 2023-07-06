@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { LikeIcon } from 'app/_src/components/common/icons';
+import { LikeIcon } from '@/ui/icons';
 
 import type { IconButtonProps } from './IconButton';
 import { IconButton, ICONBUTTON_TEST_IDS } from './IconButton';

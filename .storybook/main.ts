@@ -24,8 +24,9 @@ const config = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@/utils/helpers': path.resolve(__dirname, '../src/utils/helpers'),
-        '@/ui/icons': path.resolve(__dirname, '../src/components/icons')
+        '@/utils/helpers': path.resolve(__dirname, '../app/_src/utils/helpers'),
+        '@/ui/icons': path.resolve(__dirname, '../app/_src/components/icons'),
+        '@/.storybook': path.resolve(__dirname, './')
       };
     }
     return config;
@@ -34,4 +35,5 @@ const config = {
     autodocs: true
   }
 };
+
 export default config;

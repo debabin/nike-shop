@@ -12,10 +12,10 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/[code2]": [
+    "/[code2]/shoes/[category]/[shoeId]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/[code2].js"
+      "static/chunks/pages/[code2]/shoes/[category]/[shoeId].js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

@@ -2,6 +2,7 @@ fragment SectionTrendFragment on SectionTrend {
   sectionTitle
   shoes {
     data {
+      id
       attributes {
         name
         options {

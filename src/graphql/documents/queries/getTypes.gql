@@ -1,0 +1,9 @@
+query getTypes($locale: I18NLocaleCode) {
+  types(locale: $locale) {
+    data {
+      attributes {
+        ...TypeFragment
+      }
+    }
+  }
+}

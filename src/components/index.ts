@@ -1,4 +1,3 @@
-export * from './buttons';
 export * from './layout';
-export * from './Typography/Typography';
-export * from './Figure/Figure';
+export * from './common';
+export * from './Carousel/Carousel';

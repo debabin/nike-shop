@@ -14,4 +14,9 @@ fragment CountryFragment on Country {
       id
     }
   }
+  page_shoe {
+    data {
+      id
+    }
+  }
 }

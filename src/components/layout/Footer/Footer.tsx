@@ -1,8 +1,8 @@
+import { InstagramIcon, TwitterIcon, YoutubeIcon, LocationIcon, FacebookIcon } from '@/ui/icons';
 import Link from 'next/link';
 
 import type { GetLayoutFooterQuery } from '@/gql';
 import { Typography } from '@/ui';
-import { InstagramIcon, TwitterIcon, YoutubeIcon, LocationIcon } from '@/ui/icons';
 
 type LayoutFooterData = GetLayoutFooterQuery['layoutFooter']['data']['attributes'];
 interface FooterProps {
@@ -15,7 +15,7 @@ const socials = {
   instagram: (
     <InstagramIcon className='fill-gray-300 transition-all duration-200 hover:fill-white' />
   ),
-  facebook: <InstagramIcon className='fill-gray-300 transition-all duration-200 hover:fill-white' />
+  facebook: <FacebookIcon className='fill-gray-300 transition-all duration-200 hover:fill-white' />
 };
 
 export const Footer: React.FC<FooterProps> = ({ data }) => (
@@ -70,12 +70,12 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
             <LocationIcon className='fill-white' />
             <Link href='/'>
               <Typography className='text-white' variant='title-4'>
-                Cookie Settings
+                United Kingdom
               </Typography>
             </Link>
           </div>
           <Typography className='text-gray-300' variant='body-3'>
-            Cookie Settings
+            © {new Date().getFullYear()} Nike, Inc. All Rights Reserved
           </Typography>
         </div>
         <Typography className='text-gray-300' variant='body-3'>

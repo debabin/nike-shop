@@ -14,18 +14,24 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/gql": ["src/graphql/client"],
       "@/assets/*": ["assets/*"],
-      "@/sections/*": ["src/sections/*"],
+      "@/sections": ["src/sections"],
       "@/utils/helpers": ["src/utils/helpers"],
       "@/utils/constants": ["src/utils/constants"],
       "@/utils/api": ["src/utils/api"],
       "@/ui": ["src/components"],
-      "@/ui/icons": ["src/components/icons"]
-    }
+      "@/ui/icons": ["src/components/common/icons"],
+      "@/.storybook": [".storybook/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

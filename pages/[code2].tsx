@@ -13,7 +13,7 @@ import type {
   GetSectionTrendQuery
 } from '@/gql';
 import { gql } from '@/gql';
-import { Banner, DiscountBanner, Membership, Trend } from '@/sections/home';
+import { Banner, DiscountBanner, Membership, Trend } from '@/sections';
 import { Header, PreHeader, SubFooter, Footer } from '@/ui';
 
 export const getStaticPaths: GetStaticPaths = async () => {

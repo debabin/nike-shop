@@ -15,9 +15,6 @@ const nextConfig = {
   compiler: {
     removeConsole: { exclude: ['info', 'error'] },
     reactRemoveProperties: { properties: ['^data-testid$'] }
-  },
-  env: {
-    STRAPI_URL: 'http://localhost:1337'
   }
 };
 

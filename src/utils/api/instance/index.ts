@@ -16,10 +16,10 @@ export class API {
     this.request = axios.create({
       baseURL: options.baseUrl,
       headers: {
-        authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+        authorization: `Bearer ${process.env.STRAPI_API_TOKEN ?? ''}`
       }
     });
   }
 }
 
-export const strapiApi = new API({ baseUrl: 'http://localhost:1337/api' });
+export const strapiApi = new API({ baseUrl: process.env.PUBLIC_STRAPI_API_URL || '' });

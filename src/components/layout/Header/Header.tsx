@@ -1,8 +1,8 @@
+import { CartIcon, LikeIcon, NikeIcon } from '@/ui/icons';
 import Link from 'next/link';
 
 import type { GetLayoutHeaderQuery } from '@/gql';
 import { Typography, IconButton } from '@/ui';
-import { CartIcon, LikeIcon, NikeIcon } from '@/ui/icons';
 
 type LayoutHeaderData = GetLayoutHeaderQuery['layoutHeader']['data']['attributes'];
 interface HeaderProps {

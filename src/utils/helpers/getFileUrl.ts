@@ -1,1 +1,1 @@
-export const getFileUrl = (path: string) => `${process.env.STRAPI_URL ?? ''}${path}`;
+export const getFileUrl = (path: string) => `${process.env.PUBLIC_STRAPI_API_URL ?? ''}${path}`;

@@ -1,5 +1,0 @@
-fragment LinkFragment on ComponentUiLink {
-  id
-  label
-  href
-}

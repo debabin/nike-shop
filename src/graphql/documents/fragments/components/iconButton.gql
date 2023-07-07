@@ -1,6 +1,0 @@
-fragment IconButtonFragment on ComponentUiIconButton {
-  id
-  label
-  href
-  icon
-}

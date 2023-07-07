@@ -1,5 +1,0 @@
-fragment DiscountCard on ComponentUiDiscountCard {
-  id
-  title
-  description
-}

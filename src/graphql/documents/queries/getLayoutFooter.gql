@@ -1,9 +1,0 @@
-query getLayoutFooter($id: ID, $locale: I18NLocaleCode) {
-  layoutFooter(id: $id, locale: $locale) {
-    data {
-      attributes {
-        ...LayoutFooterFragment
-      }
-    }
-  }
-}

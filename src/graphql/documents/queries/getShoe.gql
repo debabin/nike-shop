@@ -1,9 +1,0 @@
-query getShoe($id: ID, $locale: I18NLocaleCode) {
-  shoe(id: $id, locale: $locale) {
-    data {
-      attributes {
-        ...ShoeFragment
-      }
-    }
-  }
-}

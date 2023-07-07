@@ -1,7 +1,0 @@
-fragment LanguageEntityFragment on LanguageEntity {
-  id
-  attributes {
-    name
-    code
-  }
-}

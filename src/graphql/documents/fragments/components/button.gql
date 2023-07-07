@@ -1,5 +1,0 @@
-fragment ButtonFragment on ComponentUiButton {
-  id
-  label
-  href
-}

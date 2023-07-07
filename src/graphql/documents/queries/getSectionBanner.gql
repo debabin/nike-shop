@@ -1,9 +1,0 @@
-query getSectionBanner($id: ID, $locale: I18NLocaleCode) {
-  sectionBanner(id: $id, locale: $locale) {
-    data {
-      attributes {
-        ...SectionBannerFragment
-      }
-    }
-  }
-}

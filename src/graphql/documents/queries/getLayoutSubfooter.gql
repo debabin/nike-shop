@@ -1,9 +1,0 @@
-query getLayoutSubfooter($id: ID, $locale: I18NLocaleCode) {
-  layoutSubfooter(id: $id, locale: $locale) {
-    data {
-      attributes {
-        ...LayoutSubfooterFragment
-      }
-    }
-  }
-}

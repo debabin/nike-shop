@@ -3,16 +3,31 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
     'airbnb-typescript',
-    'plugin:@next/next/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'prettier'
+    'prettier',
+    'plugin:astro/recommended'
   ],
   env: {
     browser: true,
     es2021: true
   },
   overrides: [
+    {
+      files: ['*.astro'],
+      plugins: ['astro'],
+      env: {
+        node: true,
+        'astro/astro': true,
+        es2020: true
+      },
+      parser: 'astro-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+        sourceType: 'module'
+      }
+    },
     {
       files: ['*.ts', '*.tsx'],
       parserOptions: {

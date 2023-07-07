@@ -1,0 +1,10 @@
+query getShoes($locale: I18NLocaleCode) {
+  shoes(locale: $locale) {
+    data {
+      id
+      attributes {
+        ...ShoeFragment
+      }
+    }
+  }
+}

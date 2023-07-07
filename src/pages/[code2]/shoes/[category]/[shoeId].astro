@@ -1,0 +1,104 @@
+---
+import { gql } from '@/gql';
+import { Shoe, DiscountBanner, Trend } from '@/sections';
+import { PreHeader, Header, SubFooter, Footer } from '@/ui';
+
+import Layout from '../../../../layouts/Layout.astro';
+
+export const getStaticPaths = async () => {
+  const { countries } = await gql.getCountries();
+  const { shoes } = await gql.getShoes();
+
+  const paths = countries.data.map((country) =>
+    shoes.data.map((shoe) => ({
+      params: {
+        code2: country.attributes.code2,
+        shoeId: shoe.id,
+        category: shoe.attributes.type.data.attributes.slug
+      }
+    }))
+  );
+
+  return paths.flat();
+};
+
+const { code2, shoeId } = Astro.params as { code2: string; shoeId: string };
+
+const { countries } = await gql.getCountries();
+const country = countries.data.find((country) => country.attributes.code2 === code2);
+
+if (!country) {
+  return {
+    redirect: {
+      destination: '/',
+      permanent: false
+    }
+  };
+}
+
+const locale = country.attributes.language.data.attributes.code;
+
+const { shoe } = await gql.getShoe({ locale, id: shoeId });
+
+if (!shoe.data) {
+  return {
+    redirect: {
+      destination: '/',
+      permanent: false
+    }
+  };
+}
+const { pageShoe } = await gql.getPageShoe({
+  id: country.attributes.page_shoe.data.id,
+  locale
+});
+
+const { layoutHeader } = await gql.getLayoutHeader({
+  id: pageShoe.data.attributes.layout_header.data.id,
+  locale
+});
+
+const { layoutPreHeader } = await gql.getLayoutPreHeader({
+  id: pageShoe.data.attributes.layout_pre_header.data.id,
+  locale
+});
+
+const { layoutSubfooter } = await gql.getLayoutSubfooter({
+  id: pageShoe.data.attributes.layout_subfooter.data.id,
+  locale
+});
+
+const { layoutFooter } = await gql.getLayoutFooter({
+  id: pageShoe.data.attributes.layout_footer.data.id,
+  locale
+});
+
+const { sectionDiscount } = await gql.getSectionDiscount({
+  id: pageShoe.data.attributes.section_discount.data.id,
+  locale
+});
+
+const { sectionTrend } = await gql.getSectionTrend({
+  id: pageShoe.data.attributes.section_trend.data.id,
+  locale
+});
+
+const { sectionShoe } = await gql.getSectionShoe({
+  id: pageShoe.data.attributes.section_shoe.data.id,
+  locale
+});
+---
+
+<Layout>
+  {layoutPreHeader && <PreHeader data={layoutPreHeader.data.attributes} />}
+  {layoutHeader && <Header data={layoutHeader.data.attributes} />}
+  {sectionDiscount && <DiscountBanner client:load data={sectionDiscount.data.attributes} />}
+  {
+    shoe && sectionShoe && (
+      <Shoe client:load data={{ shoe: shoe.data.attributes, ...sectionShoe.data.attributes }} />
+    )
+  }
+  {sectionTrend && <Trend client:load data={sectionTrend.data.attributes} />}
+  {layoutSubfooter && <SubFooter data={layoutSubfooter.data.attributes} />}
+  {layoutFooter && <Footer data={layoutFooter.data.attributes} />}
+</Layout>

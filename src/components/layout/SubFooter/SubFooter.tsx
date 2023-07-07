@@ -29,7 +29,7 @@ export const SubFooter: React.FC<SubFooterProps> = ({ data }) => (
             {link.link.length > ARRAY_PREVIEW_LENGTH && (
               <div
                 aria-hidden='true'
-                className='group-hover:max-h-[100rem] flex max-h-[0] flex-col gap-[0.75rem] opacity-0 transition-all duration-500 group-hover:opacity-100'
+                className='flex max-h-[0] flex-col gap-[0.75rem] opacity-0 transition-all duration-500 group-hover:max-h-[100rem] group-hover:opacity-100'
                 role='list'
               >
                 {link.link.slice(ARRAY_PREVIEW_LENGTH).map((link) => (

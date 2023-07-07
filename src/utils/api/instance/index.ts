@@ -16,7 +16,7 @@ export class API {
     this.request = axios.create({
       baseURL: options.baseUrl,
       headers: {
-        authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+        authorization: `Bearer ${import.meta.env.PUBLIC_STRAPI_API_TOKEN || ''}`
       }
     });
   }

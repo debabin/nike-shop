@@ -29,13 +29,13 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
 
                 <div className='absolute left-0 top-[3.3rem] z-[10] h-[0] w-[100vw] overflow-hidden bg-white group-hover:h-auto'>
                   <div className='flex translate-y-[-0.75rem] justify-center gap-[3rem] py-[2rem] opacity-0 transition-all duration-1000 group-hover:translate-y-0 group-hover:opacity-100'>
-                    {nav.links.map((link, index) => (
-                      <div key={index}>
+                    {nav.links.map((link) => (
+                      <div key={link.id}>
                         <Typography variant='link'>{link.title}</Typography>
 
                         <ul className='mt-[0.625rem]'>
                           {link.link.map((link) => (
-                            <li>
+                            <li key={link.id}>
                               <a href={link.href}>
                                 <Typography variant='body-3'>{link.label}</Typography>
                               </a>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../assets/styles/fonts.css';
-import '../assets/styles/globals.css';
+import '../assets/styles/global.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

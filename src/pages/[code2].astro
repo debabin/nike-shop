@@ -1,6 +1,6 @@
 ---
 import { gql } from '@/gql';
-import { Banner, DiscountBanner, Membership, Trend } from '@/sections/home';
+import { Banner, DiscountBanner, Membership, Trend } from '@/sections';
 import { Header, PreHeader, SubFooter, Footer } from '@/ui';
 
 import Layout from '../layouts/Layout.astro';
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const { code2 } = Astro.params;
+const { code2 } = Astro.params as { code2: string };
 
 const { countries } = await gql.getCountries();
 const country = countries.data.find((country) => country.attributes.code2 === code2);

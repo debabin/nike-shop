@@ -1,0 +1,9 @@
+query getSectionShoe($id: ID, $locale: I18NLocaleCode) {
+  sectionShoe(id: $id, locale: $locale) {
+    data {
+      attributes {
+        ...SectionShoeFragment
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
-import { ItemCard } from 'src/components/cards';
 
-import { Typography, ArrowButton } from '@/ui';
+import { ItemCard, Typography, ArrowButton } from '@/ui';
 
 type CarouselItem = {
   id: string;

@@ -1,8 +1,8 @@
-import { InstagramIcon, TwitterIcon, YoutubeIcon, LocationIcon, FacebookIcon } from '@/ui/icons';
 import Link from 'next/link';
 
 import type { GetLayoutFooterQuery } from '@/gql';
 import { Typography } from '@/ui';
+import { InstagramIcon, TwitterIcon, YoutubeIcon, LocationIcon, FacebookIcon } from '@/ui/icons';
 
 type LayoutFooterData = GetLayoutFooterQuery['layoutFooter']['data']['attributes'];
 interface FooterProps {
@@ -17,6 +17,7 @@ const socials = {
   ),
   facebook: <FacebookIcon className='fill-gray-300 transition-all duration-200 hover:fill-white' />
 };
+type Social = keyof typeof socials;
 
 export const Footer: React.FC<FooterProps> = ({ data }) => (
   <footer className='flex flex-col items-center justify-between bg-black-100'>
@@ -34,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
           </ul>
 
           {data.links.map((link) => (
-            <div className='flex flex-col gap-[0.3rem]'>
+            <div key={link.id} className='flex flex-col gap-[0.3rem]'>
               <Typography variant='title-5'>{link.title}</Typography>
               <ul className='flex flex-col gap-[0.5rem]'>
                 {link.link.map((link) => (
@@ -50,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
         </div>
         <div className='flex gap-[1rem]'>
           {Array.isArray(data.socilas) &&
-            (data.socilas as string[]).map((social) => (
+            data.socilas.map((social: Social) => (
               <Link href={`/${social}`}>{socials[social]}</Link>
             ))}
         </div>
@@ -58,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ data }) => (
 
       <ul className='flex w-full justify-end gap-[1rem] text-end text-gray-300'>
         {data.supportLinks.link.map((link) => (
-          <Link href={link.href}>
+          <Link key={link.id} href={link.href}>
             <Typography variant='body-3'>{link.label}</Typography>
           </Link>
         ))}

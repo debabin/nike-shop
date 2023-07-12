@@ -1,3 +1,5 @@
+'use client';
+
 import type { GetSectionTrendQuery } from '@/gql';
 import { Carousel } from '@/ui';
 import { getFileUrl } from '@/utils/helpers';

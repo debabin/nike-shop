@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import shoes from '@/.storybook/public/assets/images/shoes.webp';
-
 import type { ItemCardProps } from './ItemCard';
 import { ItemCard } from './ItemCard';
+
+import shoes from '@/.storybook/public/assets/images/shoes.webp';
 
 const itemCardProps: ItemCardProps = {
   image: {

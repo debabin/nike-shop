@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import shoes from '@/.storybook/public/assets/images/shoes.webp';
-
 import type { FigureProps } from './Figure';
 import { Figure } from './Figure';
+
+import shoes from '@/.storybook/public/assets/images/shoes.webp';
 
 const figureProps: FigureProps = {
   image: {

@@ -48,9 +48,10 @@ export const Shoe: React.FC<ShoeProps> = ({ data }) => {
           </div>
           <div className='flex gap-[0.5rem]'>
             {data.shoe.options.length > 1 &&
-              data.shoe.options.map((option) => (
+              data.shoe.options.map((option, index) => (
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events
                 <div
+                  key={index}
                   className='relative h-[4.5rem] w-[4.2rem] cursor-pointer rounded-md hover:border-[0.1rem] hover:border-black-100'
                   role='menuitem'
                   tabIndex={0}
@@ -70,25 +71,20 @@ export const Shoe: React.FC<ShoeProps> = ({ data }) => {
             <ReactMarkdown
               className='title-5'
               components={{
-                p: ({ node, ...props }) => (
-                  <Typography
-                    className='text-[1rem] leading-[1.5rem]'
-                    variant='body-2'
-                    {...props}
-                    tag='p'
-                  >
-                    {props.children}
+                p: ({ children }) => (
+                  <Typography className='text-[1rem] leading-[1.5rem]' tag='p' variant='body-2'>
+                    {children}
                   </Typography>
                 ),
-                ul: ({ node, ...props }) => (
-                  <ul className='mt-[2rem] flex list-disc flex-col gap-[1rem] pl-[1rem]' {...props}>
-                    {props.children}
+                ul: ({ children }) => (
+                  <ul className='mt-[2rem] flex list-disc flex-col gap-[1rem] pl-[1rem]'>
+                    {children}
                   </ul>
                 ),
-                li: ({ node, ...props }) => (
-                  <li {...props}>
+                li: ({ children }) => (
+                  <li>
                     <Typography className='text-[1rem]' variant='body-2'>
-                      {props.children}
+                      {children}
                     </Typography>
                   </li>
                 )

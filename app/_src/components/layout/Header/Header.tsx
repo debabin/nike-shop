@@ -1,8 +1,8 @@
-import { CartIcon, LikeIcon, NikeIcon } from '@/ui/icons';
 import Link from 'next/link';
 
 import type { GetLayoutHeaderQuery } from '@/gql';
 import { Typography, IconButton } from '@/ui';
+import { CartIcon, LikeIcon, NikeIcon } from '@/ui/icons';
 
 type LayoutHeaderData = GetLayoutHeaderQuery['layoutHeader']['data']['attributes'];
 interface HeaderProps {
@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
 
                         <ul className='mt-[0.625rem]'>
                           {link.link.map((link) => (
-                            <li>
+                            <li key={link.id}>
                               <a href={link.href}>
                                 <Typography variant='body-3'>{link.label}</Typography>
                               </a>

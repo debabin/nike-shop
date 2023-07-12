@@ -1,9 +1,9 @@
-import { JordanIcon, ConverseIcon } from '@/ui/icons';
 import Link from 'next/link';
 import React from 'react';
 
 import type { GetLayoutPreHeaderQuery } from '@/gql';
 import { Typography } from '@/ui';
+import { JordanIcon, ConverseIcon } from '@/ui/icons';
 
 type LayoutPreHeaderData = GetLayoutPreHeaderQuery['layoutPreHeader']['data']['attributes'];
 interface PreHeaderProps {

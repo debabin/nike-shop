@@ -1,7 +1,5 @@
-'use client';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import { ItemCard, Typography, ArrowButton } from '@/ui';
@@ -21,7 +19,7 @@ interface CarouselProps {
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ title, items }) => {
-  const pathname = usePathname();
+  const { locale = 'ru' } = useRouter();
   const [activeNumber, setActiveNumber] = React.useState(1);
   const scrollRef = React.useRef<HTMLUListElement>(null);
 
@@ -99,7 +97,7 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items }) => {
         className='mt-[2rem] flex w-full snap-x snap-mandatory scroll-p-[2.25rem] gap-[0.75rem] overflow-x-auto scroll-smooth pb-[1.875rem] ps-[2.25rem] transition'
       >
         {items.map((item) => (
-          <Link key={item.id} href={`${pathname}/shoes/${item.category}/${item.id}`}>
+          <Link key={item.id} href={`/${locale}/shoes/${item.category}/${item.id}`}>
             <li className='snap-start'>
               <ItemCard {...item} image={{ alt: item.title, src: item.image }} />
             </li>

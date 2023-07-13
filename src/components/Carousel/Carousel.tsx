@@ -94,7 +94,6 @@ export const Carousel: React.FC<CarouselProps> = ({ title, items }) => {
         className='mt-[2rem] flex w-full snap-x snap-mandatory scroll-p-[2.25rem] gap-[0.75rem] overflow-x-auto scroll-smooth pb-[1.875rem] ps-[2.25rem] transition'
       >
         {items.map((item) => (
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           <a key={item.id} href={`/ru/shoes/${item.category}/${item.id}`}>
             <li className='snap-start'>
               <ItemCard {...item} image={{ alt: item.title, src: item.image }} />

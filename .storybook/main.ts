@@ -16,7 +16,7 @@ const config = {
     }
   ],
   framework: {
-    name: '@storybook/nextjs',
+    name: '@storybook/react-webpack5',
     options: {}
   },
   core: {},
@@ -24,8 +24,9 @@ const config = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@/utils/helpers': path.resolve(__dirname, '../app/_src/utils/helpers'),
-        '@/ui/icons': path.resolve(__dirname, '../app/_src/components/icons'),
+        '@/utils/helpers': path.resolve(__dirname, '../src/utils/helpers'),
+        '@/ui': path.resolve(__dirname, '../src/components/common'),
+        '@/ui/icons': path.resolve(__dirname, '../src/components/common/icons'),
         '@/.storybook': path.resolve(__dirname, './')
       };
     }
